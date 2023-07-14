@@ -1,21 +1,29 @@
-from openpyxl import load_workbook
-from pycel import ExcelCompiler
 from utils.model import Address
-import win32com.client as win32
 
 
-def read_cell(file_path, address: Address):
-    excel_app = win32.Dispatch("Excel.Application")
-    workbook = excel_app.Workbooks.Open(file_path)
-    sheet = workbook.ActiveSheet
+def read_cell(workbook, address: Address):
+    """
+        Read a cell in the Excel file
+
+        :param workbook The Excel workbook that contain the file
+        :param address The address of cell that will be read
+    """
+
+    sheet = workbook.Sheets(address.sheet)
     value = sheet.Range(address.cell)
-    #workbook.close()
-    #excel_app.Quit()
+
     return value
 
-def write_cell(file_path, address: Address, value):
-    wb = load_workbook(filename=file_path)
-    sheet = wb[address.sheet]
-    sheet[address.cell].value = value
-    wb.save(file_path)
-    wb.close()
+
+def write_cell(workbook, address: Address, value):
+    """
+        Read a cell in the Excel file
+
+        :param workbook The Excel workbook that contain the file
+        :param address The address of cell that will be changed
+        :param value The value to write
+
+        Notice that this function doesn't save the change in the file
+    """
+    sheet = workbook.Sheets(address.sheet)
+    sheet.Range(address.cell).Value = value

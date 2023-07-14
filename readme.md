@@ -10,5 +10,5 @@ Ce projet est compatible uniquement avec windows et necessite l'installation pr�
 
 - Copier le fichier excel du simulateur dans le dossier du projet. Le fichier doit être nommer "simulateur.xlsx"
 
-- Toujours dans le dossier du projet, taper la commande `python run.py`. Ceci lancera le serveur du projet. Accessible à l'adresse http://127.0.0.1:5001
+- Toujours dans le dossier du projet, taper la commande `python run.py`. Ceci lancera le serveur du projet. Accessible à l'adresse http://localhost:5001
 
