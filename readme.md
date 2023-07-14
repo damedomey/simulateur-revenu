@@ -8,5 +8,7 @@ Ce projet est compatible uniquement avec windows et necessite l'installation pr�
 `python -m pip install -r requirements.txt`
 **Tooltip:** Une manier assez simple de se déplacer vers le dossier du projet est d'ouvrir le dossier dans l'explorateur de fichier. Puis dans la barre d'adresse, taper **cmd** puis entrer. Ceci ouvrira un invite de commande dans le dossier.
 
+- Copier le fichier excel du simulateur dans le dossier du projet. Le fichier doit être nommer "simulateur.xlsx"
+
 - Toujours dans le dossier du projet, taper la commande `python run.py`. Ceci lancera le serveur du projet. Accessible à l'adresse http://127.0.0.1:5001
 

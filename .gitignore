@@ -9,4 +9,4 @@ fbapp/
 venv
 .vscode
 .idea
-
+*.xlsx
