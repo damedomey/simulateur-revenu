@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Faites le test ultime">
+    <meta name="author" content="">
+    <title>Le test ultime !</title>
+
+    <meta property="og:title" content="Le test ultime !" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="static/tmp/sample.jpg" />
+    <meta property="og:description" content="Faites le test ultime" />
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap/bootstrap.min.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="../static/css/freelancer-theme.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/css/custom.css">
+    <link rel="stylesheet" href="../static/css/custom-result.css">
+
+    <!-- Custom Fonts -->
+    <script src="https://use.fontawesome.com/470b91f216.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="../static/js/jquery/jquery.min.js" charset="utf-8"></script>
+</head>
+
+<body id="page-top" class="index">
+<div id="skipnav"><a href="#maincontent">Contenu principal</a></div>
+
+<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand" href="/static">Le test ultime !</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+<div style="height: 80px"></div>
+<div class="container">
+    <h2 class="section-title">Entrepreneur individuel - Comparaison de l'imposition à l'IR ou à l'IS - Année 2022</h2>
+
+    <div class="rectangle">
+        <div class="exclamation">!</div>
+        <div class="content">
+            <h3>Bilan d'analyse</h3>
+            <p>
+                Je suis le bilan de l'analyse ou tout autre contenu blablabla
+            </p>
+
+            <br>
+            <div class="row">
+                <button class="btn btn-success"> <i class="fas fa-download"></i> Télécharger excel</button>
+                <button class="btn big-button">Autre bouton d'action rapide</button>
+            </div>
+        </div>
+    </div>
+
+
+    <h3 class="section-title">Informations générales</h3>
+    <table>
+        <tr>
+            <th>Nom du cabinet d'expertise comptable</th>
+            <td>Expert-comptable</td>
+        </tr>
+        <tr>
+            <th>Client</th>
+            <td>Nom & prénom du client / dénomination</td>
+        </tr>
+        <tr>
+            <th>Profession</th>
+            <td>Artisans-Commerçants</td>
+        </tr>
+        <tr>
+            <th>Caisse de retraite attachée</th>
+            <td>URSSAF</td>
+        </tr>
+        <tr>
+            <th>Informations complémentaires pour les professions suivantes</th>
+            <td>Foyer Fiscal</td>
+        </tr>
+        <!-- Add more rows for additional information -->
+    </table>
+
+    <h3 class="section-title">Données chiffrées</h3>
+    <table>
+        <tr>
+            <th>Bénéfice avant déduction des cotisations (et avant déduction de la rémunération pour l'EI à l'IS)</th>
+            <td>{{ result.profit_before_all }} €</td>
+        </tr>
+        <tr>
+            <th>Cotisations facultatives</th>
+            <td>10000 €</td>
+        </tr>
+        <!-- Add more rows for additional data -->
+    </table>
+
+    <h3 class="section-title">Simulations</h3>
+    <table>
+        <tr>
+            <th></th>
+            <th>EI à l'IR</th>
+            <th>EI à l'IS</th>
+        </tr>
+        <tr>
+            <td>Bénéfice avant déduction des cotisations</td>
+            <td>{{ result.IR.before_contribution }} €</td>
+            <td>{{ result.IS.before_contribution }} €</td>
+        </tr>
+        <tr>
+            <td>Rémunération</td>
+            <td>-100000 €</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Cotisations</td>
+            <td>{{ result.IR.contribution }} €</td>
+            <td>{{ result.IS.contribution }} €</td>
+        </tr>
+        <tr>
+            <td>Bénéfice (avant IS pour l'EI à l'IS)</td>
+            <td>000444 €</td>
+            <td>256141 €</td>
+        </tr>
+        <!-- Add more rows for additional simulations -->
+    </table>
+    <div class="row" style="padding-top: 50px; font-weight: bold">
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <canvas id="simulation-ei"></canvas>
+            <div class="text-center">Titre blabla EI</div>
+        </div>
+
+        <div class="col-12 col-md-6  d-flex justify-content-center">
+            <canvas id="simulation-is"></canvas>
+            <div class="text-center">Titre blabla IS</div>
+        </div>
+
+    </div>
+
+    <h3 class="section-title">Impôts</h3>
+    <table>
+        <tr>
+            <th></th>
+            <th>EI à l'IR</th>
+            <th>EI à l'IS</th>
+        </tr>
+        <tr>
+            <td>Impôt sur le revenu estimé</td>
+            <td>165588 €</td>
+            <td>100501 €</td>
+        </tr>
+        <tr>
+            <td>TMI</td>
+            <td>34,93%</td>
+            <td>29,78%</td>
+        </tr>
+    </table>
+    <!-- Add more rows for additional tax information -->
+    <div class="d-flex" style="padding-top: 50px;">
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <canvas id="imposition"></canvas>
+        </div>
+    </div>
+
+    <div>blablaldkjfq</div>
+</div>
+
+<footer class="text-center">
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <span class="italic">Copyright &copy; 2023</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+    <a class="btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../static/js/bootstrap/bootstrap.min.js" charset="utf-8"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Theme JavaScript -->
+<script src="../static/js/freelancer-theme.min.js" charset="utf-8"></script>
+
+<script>
+    const simulationEI = document.getElementById('simulation-ei');
+    const simulationIS = document.getElementById('simulation-is');
+
+    new Chart(simulationEI, {
+        type: 'doughnut',
+        data: {
+            labels: ['Bénéfice avant déduction des cotisations', 'Cotisations'],
+            datasets: [{
+                label: '€',
+                data: [321554/400000, 10859/400000],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    new Chart(simulationIS, {
+        type: 'doughnut',
+        data: {
+            labels: ['Bénéfice avant déduction des cotisations', 'Cotisations'],
+            datasets: [{
+                label: '€',
+                data: [3, 1],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+    const labels = ['EI à l\'IR', 'EI à l\'IS'];
+    const data = [165588, 100501];
+    new Chart(document.getElementById('imposition'), {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Impôt sur le revenu',
+                data: data,
+                backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)'],
+                borderColor: ['rgba(75, 192, 192, 1)', 'rgba(54, 162, 235, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+
+</html>

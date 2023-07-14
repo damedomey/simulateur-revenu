@@ -1,0 +1,82 @@
+.big-button {
+  color: #18BC9C;
+  border: 2px solid #18BC9C;
+  background-color: #fff;
+}
+header .intro-text .name {
+  font-size: 2.75em;
+}
+
+img.user_profile {
+  width: 200px;
+}
+
+#button_user_pic {
+  width: 51px;
+  margin: -10px 10px -10px -17px;
+}
+
+header img#button_user_pic {
+  display: inline;
+}
+
+footer hr.star-light:after {
+  background-color: #233140;
+}
+
+.card {
+  border: 1px solid #fff;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .card #user-name {
+    margin-top: 34%;
+  }
+  h1 {
+    margin-top: 6%;
+  }
+}
+
+.blur {
+   color: transparent;
+   text-shadow: 0 0 10px rgba(255,255,255,1);
+}
+
+.navbar-custom {
+  padding: 10px;
+}
+
+header .container {
+  padding-top: 150px;
+}
+
+.simulation-btn, .simulation-btn:hover {
+  color: white;
+  padding: 15px 20px;
+  background: none;
+  border-radius: 10px;
+  border: solid 2px white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.simulation-btn:hover {
+  color: black;
+  background: white;
+  cursor: pointer;
+}
+
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+button {
+  margin-top: 10px;
+}
+
