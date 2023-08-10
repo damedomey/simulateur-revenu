@@ -10,4 +10,5 @@ venv
 .vscode
 .idea
 *.xlsx
+!simulateur.xlsx
 tmp/*.xlsx
