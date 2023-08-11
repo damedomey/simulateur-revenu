@@ -7,7 +7,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from gevent.pywsgi import WSGIServer
 
 from utils.corespondence import DataCorrespondence
-from utils.function import read_cell
+from utils.function import read_cell, write_cell
 from utils.model import Address, SimulationResult
 import pythoncom
 
@@ -35,12 +35,19 @@ def result():
 
     workbook = excel_app.Workbooks.Open(temp_file_path)
 
+    reference = request.args.get("reference", "H26")
+    value = request.args.get("value", "450000")
+
+    write_cell(workbook, Address(reference, data_type="double", writable=True), float(value))
+
     data = SimulationResult()
     data.profit_before_all = read_cell(workbook, DataCorrespondence.profit_before_all_contribution)
     data.IR.before_contribution = read_cell(workbook, DataCorrespondence.profit_before_contribution_ir)
     data.IS.before_contribution = read_cell(workbook, DataCorrespondence.profit_before_contribution_is)
     data.IR.contribution = read_cell(workbook, DataCorrespondence.contribution_ir)
     data.IS.contribution = read_cell(workbook, DataCorrespondence.contribution_is)
+    data.IR.value = read_cell(workbook, DataCorrespondence.profit_ir)
+    data.IS.value = read_cell(workbook, DataCorrespondence.profit_is)
 
     # todo: Save, close the file and release resources
     workbook.Save()
@@ -52,6 +59,8 @@ def result():
 
 
 if __name__ == '__main__':
+    # # Debug/Development
+    # app.run(debug=True, host="0.0.0.0", port="5001")
     # Production
     http_server = WSGIServer(('0.0.0.0', 80), app)
     http_server.serve_forever()

@@ -36,6 +36,11 @@ class SimulationResult:
     def set_is_contribution(self, contribution):
         self.IS.contribution = contribution
 
+    def set_is_profit_value(self, profit):
+        self.IS.value = profit
+
+    def set_ir_profit_value(self, profit):
+        self.IR.value = profit
 
 class _Client:
     def __init__(self):
@@ -46,3 +51,4 @@ class _Profit:
     def __init__(self):
         self.before_contribution = 0
         self.contribution = 0
+        self.value = 0 # Bénéfice (avant IS pour l'EI à l'IS)
