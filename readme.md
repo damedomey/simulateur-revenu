@@ -12,3 +12,4 @@ Ce projet est compatible uniquement avec windows et necessite l'installation pr√
 
 - Toujours dans le dossier du projet, taper la commande `python run.py`. Ceci lancera le serveur du projet. Accessible √† l'adresse http://localhost:5001
 
+https://support.microsoft.com/en-us/topic/considerations-for-server-side-automation-of-office-48bcfe93-8a89-47f1-0bce-017433ad79e2
