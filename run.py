@@ -52,9 +52,7 @@ def result():
 
 
 if __name__ == '__main__':
-    # Debug/Development
-    app.run(debug=True, host="0.0.0.0", port="5001")
     # Production
-    # http_server = WSGIServer(('', 5001), app)
-    # http_server.serve_forever()
+    http_server = WSGIServer(('0.0.0.0', 80), app)
+    http_server.serve_forever()
 
