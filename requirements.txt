@@ -1,4 +1,2 @@
 flask
 gevent
-pycel
-pywin32

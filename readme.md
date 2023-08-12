@@ -12,4 +12,10 @@ Ce projet est compatible uniquement avec windows et necessite l'installation pr�
 
 - Toujours dans le dossier du projet, taper la commande `python run.py`. Ceci lancera le serveur du projet. Accessible à l'adresse http://localhost:5001
 
+Explication de microsoft relative à l'automatisation de office en server-side
 https://support.microsoft.com/en-us/topic/considerations-for-server-side-automation-of-office-48bcfe93-8a89-47f1-0bce-017433ad79e2
+
+Le lien ci-dessous décrit le problème rencontré avec les différents packages supportant 
+les calculs itératifs qu'on a trouvé. Ce topic est basé sur nodejs mais le problème est très exactement 
+le même avec pycel et tout le reste.
+https://github.com/exceljs/exceljs/issues/246
